@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String args[]) {
-        Frame frameManeiro = new Frame();
+        LaunchPage launchPage = new LaunchPage();
 
-        frameManeiro.setResizable(false);
-        frameManeiro.setVisible(true);
+        launchPage.setResizable(false);
+        launchPage.setVisible(true);
     }
 }

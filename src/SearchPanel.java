@@ -1,14 +1,14 @@
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
 
-public class Panel extends JPanel {
+public class SearchPanel extends JPanel {
     private JTextField movie_name_field = new JTextField();
 
     private JButton clear = new JButton("✕");
     private JButton search = new JButton("Pesquisar");
 
-    public Panel() {
+    public SearchPanel() {
         setLayout(null);
         this.movie_name_field.setBounds(20,30,300, 30);
         //movie_name.putClientProperty("JComponent.sizeVariant", "large");
