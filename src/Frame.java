@@ -3,7 +3,7 @@ import javax.swing.JPanel;
 
 public class Frame extends JFrame {
     public Frame () {
-        this.setBounds(200,200,400, 150);
+        this.setBounds(200,200,412, 150);
         this.setTitle("O MEU PINTINHO PIU");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

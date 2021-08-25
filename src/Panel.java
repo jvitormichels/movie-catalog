@@ -4,15 +4,25 @@ import javax.swing.*;
 
 public class Panel extends JPanel {
     private JTextField movie_name_field = new JTextField();
+
+    private JButton clear = new JButton("✕");
     private JButton search = new JButton("Pesquisar");
 
     public Panel() {
         setLayout(null);
-        this.movie_name_field.setBounds(20,30,220, 30);
+        this.movie_name_field.setBounds(20,30,300, 30);
         //movie_name.putClientProperty("JComponent.sizeVariant", "large");
         this.add(movie_name_field);
 
-        this.search.setBounds(242,30,120,29);
+        this.clear.setBounds(322,30,70,29);
+        clear.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent action) {
+                movie_name_field.setText("");
+            }
+        });
+        this.add(clear);
+
+        this.search.setBounds(20,65,372,29);
         search.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent action) {
                 String movie_name = movie_name_field.getText();
