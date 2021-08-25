@@ -4,7 +4,6 @@ import java.awt.event.ActionListener;
 
 public class SearchPanel extends JPanel {
     private JTextField movie_name_field = new JTextField();
-
     private JButton clear = new JButton("✕");
     private JButton search = new JButton("Pesquisar");
 
@@ -27,6 +26,7 @@ public class SearchPanel extends JPanel {
             public void actionPerformed(ActionEvent action) {
                 String movie_name = movie_name_field.getText();
                 System.out.println(movie_name);
+                MovieShow showMovie = new MovieShow();
             }
         });
         this.add(search);
