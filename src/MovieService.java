@@ -10,6 +10,7 @@ public class MovieService {
     static String baseUrl = "http://www.omdbapi.com/?";
 
     static Movie search(String title) throws Exception {
+        title = sanitize(title);
         URL url = new URL(baseUrl + "apikey=376e6191&t=" + title);
 
         try {
@@ -23,6 +24,10 @@ public class MovieService {
         catch (Exception e) {
             throw new Exception("Error\n" + e);
         }
+    }
+
+    static String sanitize(String text) {
+        return text.replaceAll(" ", "+");
     }
 
     static private HttpURLConnection openConnection(URL url) throws Exception {
