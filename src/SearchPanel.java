@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 public class SearchPanel extends JPanel {
     private JTextField movieName = new JTextField();
     private JButton clear = new JButton("✕");
-    private JButton search = new JButton("Pesquisar");
+    private JButton search = new JButton("Search");
 
     public SearchPanel() {
         setLayout(null);

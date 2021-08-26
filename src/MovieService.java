@@ -14,8 +14,8 @@ public class MovieService {
         URL url = new URL(baseUrl + "apikey=376e6191&t=" + title);
 
         try {
-            HttpURLConnection connection = openConnection(url);
-            BufferedReader response = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            HttpURLConnection request = sendRequest(url);
+            BufferedReader response = new BufferedReader(new InputStreamReader(request.getInputStream()));
 
             Gson gson = new Gson();
             Movie movie = gson.fromJson(response, Movie.class);
@@ -30,16 +30,16 @@ public class MovieService {
         return text.replaceAll(" ", "+");
     }
 
-    static private HttpURLConnection openConnection(URL url) throws Exception {
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        validateConnection(connection);
-        return connection;
+    static private HttpURLConnection sendRequest(URL url) throws Exception {
+        HttpURLConnection request = (HttpURLConnection) url.openConnection();
+        validateResponse(request);
+        return request;
     }
 
-    private static void validateConnection(HttpURLConnection connection) throws IOException {
+    private static void validateResponse(HttpURLConnection request) throws IOException {
         int codeSuccess = 200;
-        if (connection.getResponseCode() != codeSuccess) {
-            throw new RuntimeException("HTTP error code: " + connection.getResponseCode());
+        if (request.getResponseCode() != codeSuccess) {
+            throw new RuntimeException("HTTP error code: " + request.getResponseCode());
         }
     }
 }
