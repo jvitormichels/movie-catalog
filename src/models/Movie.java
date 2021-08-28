@@ -13,7 +13,6 @@ public class Movie {
     String Awards;
     String Year;
     String Runtime;
-    String Image;
 
     public String getTitle()    { return Title; }
     public String getRated()    { return Rated; }
@@ -25,6 +24,6 @@ public class Movie {
     public String getLanguage() { return Language; }
     public String getCountry()  { return Country; }
     public String getAwards()   { return Awards; }
-    public String getYear()        { return Year; }
-    public String getRuntime()     { return Runtime; }
+    public String getYear()     { return Year; }
+    public String getRuntime()  { return Runtime; }
 }

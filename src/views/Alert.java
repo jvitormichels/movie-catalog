@@ -13,7 +13,7 @@ public class Alert extends JFrame {
         this.setBounds(460, 280, 400, 150);
         this.setTitle("Error");
         this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         errorDescription = new JLabel(error);
         this.errorDescription.setBounds(130,15,300, 30);
