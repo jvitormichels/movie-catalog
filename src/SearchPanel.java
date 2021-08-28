@@ -29,12 +29,10 @@ public class SearchPanel extends JPanel {
 
                 try {
                     movie = MovieService.search(title);
+                    MovieShow showMovie = new MovieShow(movie);
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    System.out.println(e);
                 }
-
-                System.out.println(movie);
-                //MovieShow showMovie = new MovieShow();
             }
         });
         this.add(search);

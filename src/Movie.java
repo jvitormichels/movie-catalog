@@ -11,13 +11,7 @@ public class Movie {
     String Awards;
     String Year;
     String Runtime;
-
-    @Override
-    public String toString() {
-        return "-- Movie data --\n" +
-                "Title: " + Title + "\n" +
-                "Plot: " + Plot + "\n";
-    }
+    String Image;
 
     public String getTitle()    { return Title; }
     public String getRated()    { return Rated; }
