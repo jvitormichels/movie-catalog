@@ -1,3 +1,5 @@
+package models;
+
 public class Movie {
     String Title;
     String Rated;

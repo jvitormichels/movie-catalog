@@ -1,5 +1,8 @@
+package views;
+
+import views.SearchPanel;
+
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class LaunchPage extends JFrame {
     public LaunchPage () {

@@ -1,3 +1,7 @@
+package views;
+
+import controllers.MovieController;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,14 +29,7 @@ public class SearchPanel extends JPanel {
         search.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent action) {
                 String title = movieName.getText();
-                Movie movie = null;
-
-                try {
-                    movie = MovieService.search(title);
-                    MovieShow showMovie = new MovieShow(movie);
-                } catch (Exception e) {
-                    System.out.println(e);
-                }
+                MovieController.search(title);
             }
         });
         this.add(search);

@@ -1,4 +1,7 @@
+package services;
+
 import com.google.gson.*;
+import models.Movie;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +12,7 @@ import java.net.URL;
 public class MovieService {
     static String baseUrl = "http://www.omdbapi.com/?";
 
-    static Movie search(String title) throws Exception {
+    public static Movie search(String title) throws Exception {
         title = sanitize(title);
         URL url = new URL(baseUrl + "apikey=376e6191&t=" + title);
 

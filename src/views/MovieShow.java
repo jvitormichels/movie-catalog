@@ -1,7 +1,12 @@
+package views;
+
+import models.Movie;
+import views.ShowPanel;
+
 import javax.swing.*;
 
 public class MovieShow extends JFrame {
-    MovieShow (Movie movie) {
+    public MovieShow (Movie movie) {
         this.setBounds(650, 50, 700, 700);
         this.setTitle(movie.getTitle());
         this.setVisible(true);
