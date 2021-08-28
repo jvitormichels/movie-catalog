@@ -1,6 +1,7 @@
 package services;
 
 import com.google.gson.*;
+import exceptions.MovieNotFoundException;
 import models.Movie;
 
 import java.io.BufferedReader;
@@ -22,9 +23,14 @@ public class MovieService {
 
             Gson gson = new Gson();
             Movie movie = gson.fromJson(response, Movie.class);
+
+            if (movie.getTitle() == null) {
+                throw new MovieNotFoundException();
+            }
+
             return movie;
         }
-        catch (Exception e) {
+        catch (IOException e) {
             throw new Exception("Error\n" + e);
         }
     }
@@ -42,7 +48,7 @@ public class MovieService {
     private static void validateResponse(HttpURLConnection request) throws IOException {
         int codeSuccess = 200;
         if (request.getResponseCode() != codeSuccess) {
-            throw new RuntimeException("HTTP error code: " + request.getResponseCode());
+            throw new IOException("HTTP status code: " + request.getResponseCode());
         }
     }
 }

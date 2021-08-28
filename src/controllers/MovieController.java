@@ -1,7 +1,9 @@
 package controllers;
 
+import exceptions.MovieNotFoundException;
 import models.Movie;
 import services.MovieService;
+import views.Alert;
 import views.MovieShow;
 
 public class MovieController {
@@ -11,7 +13,7 @@ public class MovieController {
             new MovieShow(movie);
         }
         catch (Exception e) {
-            //janela de aviso
+            new Alert(e.getMessage());
         }
     }
 }
